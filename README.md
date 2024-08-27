@@ -4,7 +4,7 @@
 
 #on Terminal, start by run interactive session to check the config of gcloud etc. (go for sbatch script if you have all config set-up)
 
- $  srun -n 2 --mem 4000 --pty bash –i 
+     $  srun -n 2 --mem 4000 --pty bash –i 
 
 #create the new folder on Terminal (on your dir)
 #change dir to your folder of interest 
@@ -13,7 +13,7 @@
 
 #1. Install/open gcloud SDK in a terminal 
 
- $ module load gcloud
+     $ module load gcloud
 
  $ gsutil version -l 
 
