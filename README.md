@@ -20,7 +20,7 @@ $ gsutil version -l
 #Updates are available for some Google Cloud CLI components.  To install them, 
 
 #please run: 
-  $ gcloud components update   ##do not run this 
+  $ gcloud components update   ##do not run this - you cannot update the software yourself
 
 #gsutil version: 5.27
 
