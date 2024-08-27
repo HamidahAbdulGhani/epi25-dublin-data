@@ -57,7 +57,7 @@
       $ gcloud auth login 
 
 #Copied that link from Terminal to Google browser (if it is blocked, allow third party cookies etc>as above) 
-#Copied and pasted back the authorization code into terminal and it is worked (try to list my buckets) 
+#Copied and pasted back the authorization code into terminal
 
 #You can verify which Google Account you’ve authorized with gcloud by running the following command. 
 
