@@ -84,6 +84,7 @@
 #README included were necessary including manifests files 
 
 #after completed the process
+
        $ module purge 
 
 #Exit from interactive session 
