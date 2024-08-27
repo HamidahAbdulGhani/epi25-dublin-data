@@ -7,7 +7,7 @@ Epi25 dublin data download from Terra account to RCSI Local Compute
 $  srun -n 2 --mem 4000 --pty bash –i 
 
 #create the new folder on Terminal (on your dir)
-# change dir to your folder of interest 
+#change dir to your folder of interest 
 
 #load the required module, make sure to sign in to rcsi linked google id that linked to your approved workspace Terra email account (both rcsi.ie in my case), using gcloud latest module  
 
