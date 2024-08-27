@@ -65,9 +65,7 @@ $ gcloud auth list
 
     Credentialed Accounts 
 
-ACTIVE  ACCOUNT 
-
-*       Hamidcccccccsddd0@rcsi.ie
+    Hamidcccccccsddd0@rcsi.ie
 
   #pls check available storage space in local compute before download data
 
