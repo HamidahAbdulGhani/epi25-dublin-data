@@ -71,14 +71,15 @@
 
 #2. Download the data from authorized cloud workspaces
    #gsutils still worked as Aug 2024 (you can work out an equivalent gcloud storage command)
+   #you can get the project and workspace name in Terra>Data..copy and paste into here
    
-       gsutil -m cp -r "gs://fc-3a833f4b-eb2b-40e1-b90c-0513137bef7d/Epi25_NINDS_Neale_IRLRCI_Delanty_Cavalleri_McCormack_Epilepsy_GRU-IRB_GSA-MD_Year7" . 
+      gsutil -m cp -r "gs://fc-3a833f4b-eb2b<<dummyid>>>37bef7d/Epi25_NINDS_Neale_IRLRCI_Delanty_Cavalleri_McCormack_Epilepsy_GRU-IRB_GSA-MD_Year7" . 
        
-      gsutil -m cp -r "gs://fc-dba01022-efbe-46c8-9b26-7f279641633f/Epi25_NINDS_Neale_IRLRCI_Delanty_Cavalleri_McCormack_Epilepsy_GRU_IRB_WES_Year7/" . 
+      gsutil -m cp -r "gs://fc-dba01022-efbe-46b<<dummyid>>>9641633f/Epi25_NINDS_Neale_IRLRCI_Delanty_Cavalleri_McCormack_Epilepsy_GRU_IRB_WES_Year7/" . 
       
-      gsutil -m cp -r gs://fc-dba01022-efbe-46c8-9b26-7f279641633f/PO-59245_Epi25_NINDS_Neale_IRLRCI_Delanty_Cavalleri_McCormack_Epilepsy_GRU_IRB_WES_Year7_terra_manifest.tsv . 
+      gsutil -m cp -r gs://fc-dba01022-efbe-46b<<dummyid>>>79641633f/PO-59245_Epi25_NINDS_Neale_IRLRCI_Delanty_Cavalleri_McCormack_Epilepsy_GRU_IRB_WES_Year7_terra_manifest.tsv . 
       
-      gsutil -m cp -r gs://fc-dba01022-efbe-46c8-9b26-7f279641633f/terra_manifest.tsv . 
+      gsutil -m cp -r gs://fc-dba01022-efbe-b<<dummyid>>>641633f/terra_manifest.tsv . 
 
 #README included were necessary including manifests files 
 
