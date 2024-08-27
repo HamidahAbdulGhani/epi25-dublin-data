@@ -13,7 +13,8 @@ $  srun -n 2 --mem 4000 --pty bash –i
 
 #1. Install/open gcloud SDK in a terminal 
 
-$ module load gcloud 
+$ module load gcloud
+
 $ gsutil version -l 
 
 Updates are available for some Google Cloud CLI components.  To install them, 
