@@ -83,7 +83,7 @@
 
 #README included were necessary including manifests files 
 
-#after completed the process
+#Unload module after completed the process
 
        $ module purge 
 
