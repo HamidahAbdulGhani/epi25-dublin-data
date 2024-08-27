@@ -15,12 +15,12 @@
 
      $ module load gcloud
 
- $ gsutil version -l 
+     $ gsutil version -l 
 
 #Updates are available for some Google Cloud CLI components.  To install them, 
 
 #please run: 
-  $ gcloud components update   ##do not run this - you cannot update the software yourself
+      $ gcloud components update   ##do not run this - you cannot update the software yourself
 
 #gsutil version: 5.27
 
@@ -54,32 +54,32 @@
 
 #Followed above steps and use command as below in the Terminal 
 
-$ gcloud auth login 
+      $ gcloud auth login 
 
 #Copied that link from Terminal to Google browser (if it is blocked, allow third party cookies etc>as above) 
 #Copied and pasted back the authorization code into terminal and it is worked (try to list my buckets) 
 
 #You can verify which Google Account you’ve authorized with gcloud by running the following command. 
 
-$ gcloud auth list 
+      $ gcloud auth list 
 
-    Credentialed Accounts 
+      Credentialed Accounts 
 
-    Hamidcccccccsddd0@rcsi.ie
+      Hamidcccccccsddd0@rcsi.ie
 
   #pls check available storage space in local compute before download data
 
 #2. Download the data from authorized cloud workspaces
    #gsutils still worked as Aug 2024 (you can work out an equivalent gcloud storage command) 
-gsutil -m cp -r "gs://fc-3a833f4b-eb2b-40e1-b90c-0513137bef7d/Epi25_NINDS_Neale_IRLRCI_Delanty_Cavalleri_McCormack_Epilepsy_GRU-IRB_GSA-MD_Year7" . 
-gsutil -m cp -r "gs://fc-dba01022-efbe-46c8-9b26-7f279641633f/Epi25_NINDS_Neale_IRLRCI_Delanty_Cavalleri_McCormack_Epilepsy_GRU_IRB_WES_Year7/" . 
-gsutil -m cp -r gs://fc-dba01022-efbe-46c8-9b26-7f279641633f/PO-59245_Epi25_NINDS_Neale_IRLRCI_Delanty_Cavalleri_McCormack_Epilepsy_GRU_IRB_WES_Year7_terra_manifest.tsv . 
-gsutil -m cp -r gs://fc-dba01022-efbe-46c8-9b26-7f279641633f/terra_manifest.tsv . 
+      gsutil -m cp -r "gs://fc-3a833f4b-eb2b-40e1-b90c-0513137bef7d/Epi25_NINDS_Neale_IRLRCI_Delanty_Cavalleri_McCormack_Epilepsy_GRU-IRB_GSA-MD_Year7" . 
+      gsutil -m cp -r "gs://fc-dba01022-efbe-46c8-9b26-7f279641633f/Epi25_NINDS_Neale_IRLRCI_Delanty_Cavalleri_McCormack_Epilepsy_GRU_IRB_WES_Year7/" . 
+      gsutil -m cp -r gs://fc-dba01022-efbe-46c8-9b26-7f279641633f/PO-59245_Epi25_NINDS_Neale_IRLRCI_Delanty_Cavalleri_McCormack_Epilepsy_GRU_IRB_WES_Year7_terra_manifest.tsv . 
+      gsutil -m cp -r gs://fc-dba01022-efbe-46c8-9b26-7f279641633f/terra_manifest.tsv . 
 
 #README included were necessary including manifests files 
 
 #after completed the process
-$ module purge 
+     $ module purge 
 
 #Exit from interactive session 
 
