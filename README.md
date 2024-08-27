@@ -22,19 +22,32 @@ $ gsutil version -l
 #please run: 
   $ gcloud components update   ##do not run this 
 
-#gsutil version: 5.27 
+#gsutil version: 5.27
+
 #checksum: 5cf9fcad0f47bc86542d009bbe69f297 (OK) 
+
 #boto version: 2.49.0 
+
 #python version: 3.11.8 (main, Feb 27 2024, 21:22:27) [Clang 17.0.6 ] 
+
 #OS: Linux 3.10.0-1160.71.1.el7.x86_64 
+
 #multiprocessing available: True 
+
 #using cloud sdk: True 
+
 #pass cloud sdk credentials to gsutil: True 
+
 #config path(s): No config found 
+
 #gsutil path: /home/apps/easybuild/software/gcloud/472.0.0/bin/gsutil 
+
 #compiled crcmod: True 
+
 #installed via package manager: False 
+
 #editable install: False 
+
 #shim enabled: False 
 
 #**Notes: need to remove any extensions, clear the browsing history on the Google, allow third party cookies on Google to avoid blocked Google browser 
