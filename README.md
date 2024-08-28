@@ -9,7 +9,7 @@
 #create the new folder on Terminal (on your dir)
 #change dir to your folder of interest 
 
-#load the required module, make sure to sign in to rcsi linked google id that linked to your approved workspace Terra email account (both rcsi.ie in my case), using gcloud latest module  
+#load the required module, make sure to sign in to rcsi account on Google (you rcsi email should linked with google id -please use similar email id for your Terra email account registration (both rcsi.ie in my case)
 
 #1. Install/open gcloud SDK in a terminal 
 
@@ -69,9 +69,9 @@
 
   #pls check available storage space in local compute before download data
 
-#2. Download the data from authorized cloud workspaces
+#2. Download the data from authorized Terra cloud workspaces
    #gsutils still worked as Aug 2024 (you can work out an equivalent gcloud storage command)
-   #you can get the project and workspace name in Terra>Data..copy and paste into here
+   #you can get the project and workspace name in Terra workspace>go to Data>copy and paste the ID and bucket name as below
    
       gsutil -m cp -r "gs://fc-3a833f4b-eb2b<<dummyid>>>37bef7d/Epi25_NINDS_Neale_IRLRCI_Delanty_Cavalleri_McCormack_Epilepsy_GRU-IRB_GSA-MD_Year7" . 
        
@@ -87,6 +87,6 @@
 
        $ module purge 
 
-#Exit from interactive session 
+#Exit from an interactive session 
 
 
