@@ -4,82 +4,74 @@
 
 #on Terminal, start by run interactive session to check the config of gcloud etc. (go for sbatch script if you have all config set-up)
 
-     $  srun -n 2 --mem 4000 --pty bash –i 
+     $  srun -n 2 --mem 15000 --pty bash –i 
 
 #create the new folder on Terminal (on your dir)
 #change dir to your folder of interest 
 
-#load the required module, make sure to sign in to rcsi account on Google (you rcsi email should linked with google id -please use similar email id for your Terra email account registration (both rcsi.ie in my case)
+#load the required module, make sure to sign in to rcsi account on Google (you rcsi email should linked with google id -please use similar email id for your Terra email account registration (both rcsi.com in my case)
 
 #1. Install/open gcloud SDK in a terminal 
 
-     $ module load gcloud
+      $ module load gcloud/472.0.0 
 
-     $ gsutil version -l 
+#2. Set environment variables 
+#For array data: #remove any space 
+     
+     $ BUCKET='gs://fcxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx'  #always put the gs:// before the bucket name
+     $ PROJECT_ID='terra-xxxxxx' 
 
-#Updates are available for some Google Cloud CLI components.  To install them, 
+#3. Run commands in cloud environment terminal 
 
-#please run: 
-      $ gcloud components update   ##do not run this - you cannot update the software yourself
+#Step 1. Open a terminal configured to run gcloud on local RCSI machine. 
 
-#gsutil version: 5.27
+#Step 2. List files within your gcloud directory with the following command. 
 
-#checksum: 5cf9fcad0f47bc86542d009bbe69f297 (OK) 
+     $ gcloud storage ls $BUCKET 
 
-#boto version: 2.49.0 
+#ERROR: (gcloud.storage.ls) You do not currently have an active account selected. 
 
-#python version: 3.11.8 (main, Feb 27 2024, 21:22:27) [Clang 17.0.6 ] 
+#Please run: 
 
-#OS: Linux 3.10.0-1160.71.1.el7.x86_64 
+ # $ gcloud auth login 
 
-#multiprocessing available: True 
+#to obtain new credentials. 
 
-#using cloud sdk: True 
+#If you have already logged in with a different account, run: 
 
-#pass cloud sdk credentials to gsutil: True 
+     $ gcloud config set account x@x.com 
 
-#config path(s): No config found 
+     $ gcloud auth login 
 
-#gsutil path: /home/apps/easybuild/software/gcloud/472.0.0/bin/gsutil 
-
-#compiled crcmod: True 
-
-#installed via package manager: False 
-
-#editable install: False 
-
-#shim enabled: False 
-
-#**Notes: need to remove any extensions, clear the browsing history on the Google, allow third party cookies on Google to avoid blocked Google browser 
-
-#Followed above steps and use command as below in the Terminal 
-
-      $ gcloud auth login 
-
-#Copied that link from Terminal to Google browser (if it is blocked, allow third party cookies etc>as above) 
-#Copied and pasted back the authorization code into terminal
-
-#You can verify which Google Account you’ve authorized with gcloud by running the following command. 
-
-      $ gcloud auth list 
-
-      Credentialed Accounts 
-
-      Hamidcccccccsddd0@rcsi.ie
-
-  #pls check available storage space in local compute before download data
+#make sure you sign in first to your google account and Terra via the same .com accounts 
+# copy the code from Terminal to your Google Browser #**Notes: need to remove any extensions, clear the browsing history on the Google, allow third party cookies on Google to avoid blocked Google browser 
+#Paste the verification code into Terminal
+#This above step confirmed that you now login to your Terra credential before moving the data.
+#pls check available storage space in local compute before download data
 
 #2. Download the data from authorized Terra cloud workspaces
-   #gsutils still worked as Aug 2024 (you can work out an equivalent gcloud storage command)
-   #you can get the project and workspace name in Terra workspace>go to Data>copy and paste the ID and bucket name as below
-   
-      gsutil -m cp -r "gs://fc-3a833f4b-eb2b<<dummyid>>>37bef7d/Epi25_NINDS_Neale_IRLRCI_Delanty_Cavalleri_McCormack_Epilepsy_GRU-IRB_GSA-MD_Year7" . 
-       
-      gsutil -m cp -r "gs://fc-dba01022-efbe-46b<<dummyid>>>9641633f/Epi25_NINDS_Neale_IRLRCI_Delanty_Cavalleri_McCormack_Epilepsy_GRU_IRB_WES_Year7/" . 
-      
-      gsutil -m cp -r gs://fc-dba01022-efbe-46b<<dummyid>>>79641633f/PO-59245_Epi25_NINDS_Neale_IRLRCI_Delanty_Cavalleri_McCormack_Epilepsy_GRU_IRB_WES_Year7_terra_manifest.tsv . 
-      
-      gsutil -m cp -r gs://fc-dba01022-efbe-b<<dummyid>>>641633f/terra_manifest.tsv . 
+  
+#you can get the project and workspace name in Terra workspace>go to Cloud Info>copy and paste the ID and bucket name as below
+
+#Copy the 10GB genotyping data #less than a min 
+     
+     $ gcloud storage cp -R $BUCKET . #make sure you in the correct dir otherwise just specify the full path
+
+#After you done with array data download then do the same for WES data
+#Do copy the WES Irish data about 43.7GB.make sure you in the correct folder for WES 
+
+#2. Set environment variables 
+
+#For WES data: remove any space, you can the BUCKET and Project ID  this in your approved Terra account (Fexxxxx will do this), Go to Terra Workspace > Cloud Information. Always add the gs:// 
+
+     $ BUCKET='gs://fc-xxxxxxxxxxxxxxxxxxxxxxxxxxxx'    #bucket name 
+     $ PROJECT_ID='terra-xxxxxx' 
+
+#you already login to your credential before when you download the array data, no need to repeat it for wes data download 
+
+#Copied 47.3GB WES data #3 mins 
+     
+     $ gcloud storage cp -R $BUCKET . 
 
 #README included were necessary including manifests files 
 
@@ -88,5 +80,10 @@
        $ module purge 
 
 #Exit from an interactive session 
+     
+       $ exit #exit from session
+       $ exit #exit from Terminal
 
+#Congratulations!
+       
 
